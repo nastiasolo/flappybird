@@ -1,0 +1,16 @@
+body {
+  background-color: rgb(65, 177, 205);
+  height: 100%;
+  margin: 0;
+}
+
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+canvas {
+  background-image: url(./flappybirdbg.png);
+}
