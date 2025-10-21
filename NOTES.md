@@ -9,4 +9,6 @@
 
 - `draw()` — draws bird, pipes
 - `update()` — updates positions
+  on every millisecond (frame, second ?) this function adds to Y -> bird moves down
 - `onInput()` — makes the bird jump when user clicks
+  on click/press subtract a little from bird Y -> bird moves up a bit
