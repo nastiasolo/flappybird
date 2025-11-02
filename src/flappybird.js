@@ -20,6 +20,11 @@ let pipeY = 0;
 let topPipeImg;
 let bottomPipeImg;
 
+//physics
+let jumpStrength = 30;
+let gravity = 1;
+let gameOver = false;
+
 window.onload = function () {
   board = document.getElementById("board");
   board.height = boardHeight;
@@ -44,6 +49,7 @@ window.onload = function () {
   //NEW: Start the game loop
   // Add the keydown listener once (not every frame)
   document.addEventListener("keydown", handleKeydown);
+  board.addEventListener("contextmenu", handleRightClick);
 
   requestAnimationFrame(update);
 };
@@ -67,31 +73,51 @@ function drawPipes() {
 function handleKeydown(event) {
   console.log(event.key);
   if (event.key == " ") {
-    birdY -= 30;
+    birdY -= jumpStrength;
   }
+}
+
+function handleRightClick(event) {
+  event.preventDefault();
+  if (gameOver) {
+    restartGame();
+  }
+}
+
+function drawGameOver() {
+  context.font = "bold 36px Arial, sans-serif";
+  context.textAlign = "center";
+  context.fillStyle = "#fff";
+  context.fillText("Game Over", board.width / 2, 80);
+}
+
+function restartGame() {
+  birdY = boardHeight / 2;
+  gameOver = false;
+  requestAnimationFrame(update);
 }
 
 // Main game loop
 function update() {
-  console.log("Game updating...");
+  if (gameOver) {
+    drawGameOver();
+    return;
+  }
 
   // Clears the entire canvas
   context.clearRect(0, 0, board.width, board.height);
 
   // Updates the bird's position
-  birdY = birdY + 1; // Gravity effect: bird falls down each frame
+  birdY = birdY + gravity; // Gravity effect: bird falls down each frame
   pipeX = pipeX - 1; // Move pipes to the left
 
   // Draws the bird at its new position
   // Draw pipes and bird
-  drawPipes();
   drawBird();
+  // drawPipes();
 
-  if (birdY >= boardHeight) {
-    context.font = "bold 36px Arial, sans-serif";
-    context.textAlign = "center";
-    context.fillStyle = "#fff";
-    context.fillText("Game Over", board.width / 2, 80);
+  if (birdY >= boardHeight || birdY < 0) {
+    gameOver = true;
   }
 
   requestAnimationFrame(update);
