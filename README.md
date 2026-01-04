@@ -1,9 +1,23 @@
-# My Website
+# Flappy Bird
 
-## Getting Started
-- Setup the recommended extensions
-- Install [volta](https://volta.sh/) to manage Node.js versions.
-- Run `npm install` to install dependencies.
+A Flappy Bird-style game implemented with **HTML, CSS & JavaScript**.
+This project is a learning exercise in game logic, canvas drawing, and DOM interaction.  
+
+## 🎮 About
+You control a bird and try to fly between pipes without hitting them. 
+
+## 🚀 Features
+	•	Classic Flappy Bird gameplay
+	•	Sound effects
+	•	Ability to restart the game
+	•	Built with vanilla JavaScript
+	•	No frameworks or build tools
+
+## Preview
+
+<p align="center">
+  <img src="./src/flappy-screenshot.png" alt="Flappy Bird game" width="450">
+</p>
 
 ## Credits
 A special thanks to https://github.com/ImKennyYip/flappy-bird for the reference implementation.
