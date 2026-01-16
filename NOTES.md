@@ -12,3 +12,8 @@
   on every millisecond (frame, second ?) this function adds to Y -> bird moves down
 - `onInput()` — makes the bird jump when user clicks
   on click/press subtract a little from bird Y -> bird moves up a bit
+
+## How to move pipes
+
+- x position, gap size, top height, width
+- when to spawn a new pipe (time-based or distance-based)
