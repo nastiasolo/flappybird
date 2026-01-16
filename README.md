@@ -19,5 +19,8 @@ You control a bird and try to fly between pipes without hitting them.
   <img src="./flappy-screenshot.png" alt="Flappy Bird game" width="450">
 </p>
 
+## Live Demo
+[![Live Demo](https://img.shields.io/badge/Live-Demo-green)](https://nastiasolo.github.io/flappybird/)
+
 ## Credits
 A special thanks to https://github.com/ImKennyYip/flappy-bird for the reference implementation.
