@@ -16,7 +16,7 @@ You control a bird and try to fly between pipes without hitting them.
 ## Preview
 
 <p align="center">
-  <img src="./src/flappy-screenshot.png" alt="Flappy Bird game" width="450">
+  <img src="./flappy-screenshot.png" alt="Flappy Bird game" width="450">
 </p>
 
 ## Credits
